@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Sports product illustration">
+  <rect width="640" height="420" fill="#ecfdf5"/>
+  <rect x="150" y="250" width="340" height="68" rx="34" fill="#10b981"/>
+  <rect x="185" y="214" width="270" height="38" rx="19" fill="#047857"/>
+  <circle cx="450" cy="150" r="64" fill="#f59e0b"/>
+  <path d="M404 116c34 30 62 60 84 104M392 156c46-8 88-8 126 0" fill="none" stroke="#92400e" stroke-width="10"/>
+  <path d="M160 180h130M184 154h82" stroke="#065f46" stroke-width="22" stroke-linecap="round"/>
+</svg>

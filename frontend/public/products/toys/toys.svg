@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Toys product illustration">
+  <rect width="640" height="420" fill="#fffbeb"/>
+  <rect x="174" y="166" width="118" height="118" rx="18" fill="#f97316"/>
+  <rect x="302" y="118" width="118" height="118" rx="18" fill="#3b82f6"/>
+  <rect x="348" y="246" width="118" height="118" rx="18" fill="#22c55e"/>
+  <circle cx="230" cy="124" r="34" fill="#ef4444"/>
+  <circle cx="448" cy="112" r="26" fill="#a855f7"/>
+  <path d="M210 224h46M338 176h46M384 306h46" stroke="#fff7ed" stroke-width="18" stroke-linecap="round"/>
+</svg>

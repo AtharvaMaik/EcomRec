@@ -1,0 +1,79 @@
+=========================================================
+RecommendIt! E-Commerce Platform - Project Report
+=========================================================
+
+1. PROJECT OVERVIEW
+-------------------
+RecommendIt is a fullstack web application designed to demonstrate a high-performance, real-time recommendation engine integrated into a modern eCommerce interface. It manages a synthetic catalog of 10,000 daily use items spanning multiple categories such as Electronics, Clothing, and Groceries.
+
+2. TECHNOLOGY STACK
+-------------------
+- Frontend: React UI built via Vite.
+- Styling: Pure Vanilla CSS implementing a "Glassmorphism" design aesthetic (frosted glass effects, dynamic pulse/fade-in animations).
+- Backend: Node.js with the Express framework.
+- Database: SQLite, housing 10,000 uniquely generated product entries with dynamic pricing, categories, and tags.
+
+3. ARCHITECTURE & WORKFLOW
+--------------------------
+The system boots by executing the backend initialization sequence. Upon startup, the Node.js server connects to the SQLite database and caches the 10,000 products. During this phase, it computes the entire Term Frequency-Inverse Document Frequency (TF-IDF) vocabulary for all products, allowing real-time similarity lookups in memory.
+
+When a user interacts with the frontend:
+1. They scroll through the infinite-loading product grid.
+2. Clicking "Add to Cart" pushes the product ID to the local React state.
+3. A `useEffect` hook triggers an API call to the backend for that specific product ID.
+4. The backend computes the Cosine Similarity mathematically against all other 9,999 items, returning the top matches within ~10ms.
+5. The frontend dynamically renders the "You Might Also Like" side panel based on the JSON response.
+
+4. EXACT MATHEMATICS (Recommendation Engine)
+--------------------------------------------
+The recommendation engine uses Content-Based Filtering, specifically analyzing semantic similarities between product Tags and Categories.
+
+Step 1: Term Frequency (TF)
+Calculates how frequently a descriptive tag appears within a single product's metadata.
+TF = (Number of occurrences of tag T in Product P) / (Total number of tags in Product P)
+
+Step 2: Inverse Document Frequency (IDF)
+Penalizes common tags (like "Sale") and mathematically rewards rare, specific descriptive tags.
+IDF = ln(Total number of products in Database / Number of products containing tag T)
+
+Step 3: Vectorization (TF-IDF Weight)
+Every product is converted into a multi-dimensional array (vector) where each dimension represents a tag, and the scalar value is:
+Weight = TF * IDF
+
+Step 4: Cosine Similarity
+When an item is added to the cart (Vector A), the engine finds similar items (Vector B) by measuring the geometric angle between their vectors in the multi-dimensional space.
+Cosine(A, B) = (A dot B) / (Magnitude of A * Magnitude of B)
+
+A score of 1 indicates exact textual similarity, while 0 means completely disjoint.
+
+5. REST API ENDPOINTS
+---------------------
+The server exposes the following API routes under `http://localhost:3001`:
+
+A. `GET /api/products`
+- Description: Retrieves products mapped directly from the SQLite database.
+- Query Parameters:
+  - `page`: Integer (default: 1)
+  - `limit`: Integer (default: 50)
+- Response Payload: JSON object containing `total`, `page`, `totalPages`, and an array of `products`.
+
+B. `GET /api/recommendations`
+- Description: Triggers the TF-IDF recommendation engine.
+- Query Parameters: 
+  - `productId`: Integer (required). The ID of the primary cart item.
+- Execution Workflow:
+  1. Finds the specific vector representation for the `productId`.
+  2. Iterates over all cached vectors and computes the Cosine Similarity score.
+  3. Sorts scores descendingly.
+  4. Returns the top 8 heaviest geometric matches.
+- Response Payload: JSON object containing an array of fully populated product objects (`recommendations`).
+
+6. CORE BACKEND FUNCTIONS
+-------------------------
+- `initializeRecommendationEngine()`: Parses the 10,000 SQL rows into TF-IDF sparse memory vectors on boot server start. Maps and creates the vocabulary index.
+- `getTokens(product)`: Text tokenizer handling string splitting and alphanumeric sanitization.
+- `computeCosineSimilarity(vecA, magA, vecB, magB)`: The core linear algebra JavaScript kernel computing the mathematical dot product and returning the decimal correlation.
+
+=========================================================
+End of Report
+=========================================================

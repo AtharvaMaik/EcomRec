@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Electronics product illustration">
+  <rect width="640" height="420" fill="#eef6ff"/>
+  <rect x="120" y="82" width="400" height="240" rx="18" fill="#172554"/>
+  <rect x="146" y="108" width="348" height="188" rx="10" fill="#60a5fa"/>
+  <rect x="260" y="322" width="120" height="26" rx="8" fill="#334155"/>
+  <rect x="220" y="350" width="200" height="20" rx="10" fill="#475569"/>
+  <circle cx="468" cy="330" r="44" fill="#0f172a"/>
+  <circle cx="468" cy="330" r="24" fill="#93c5fd"/>
+  <path d="M172 338c0-52 40-92 92-92" fill="none" stroke="#0f172a" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="172" cy="338" r="30" fill="#2563eb"/>
+  <circle cx="264" cy="246" r="30" fill="#2563eb"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Beauty product illustration">
+  <rect width="640" height="420" fill="#fdf2f8"/>
+  <rect x="242" y="120" width="96" height="230" rx="28" fill="#db2777"/>
+  <rect x="258" y="84" width="64" height="56" rx="18" fill="#831843"/>
+  <rect x="370" y="150" width="70" height="176" rx="24" fill="#f472b6"/>
+  <rect x="382" y="112" width="46" height="52" rx="14" fill="#be185d"/>
+  <circle cx="230" cy="116" r="22" fill="#f9a8d4"/>
+  <circle cx="462" cy="98" r="18" fill="#f9a8d4"/>
+  <path d="M198 296c46-28 84-28 130 0" fill="none" stroke="#831843" stroke-width="14" stroke-linecap="round"/>
+</svg>

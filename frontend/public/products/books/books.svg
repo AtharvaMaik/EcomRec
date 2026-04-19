@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Books product illustration">
+  <rect width="640" height="420" fill="#f8fafc"/>
+  <rect x="166" y="102" width="92" height="230" rx="10" fill="#2563eb"/>
+  <rect x="270" y="82" width="92" height="250" rx="10" fill="#dc2626"/>
+  <rect x="374" y="122" width="92" height="210" rx="10" fill="#16a34a"/>
+  <path d="M188 150h48M292 134h48M396 172h48M188 280h48M292 276h48M396 280h48" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+</svg>

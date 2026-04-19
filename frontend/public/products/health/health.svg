@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Health product illustration">
+  <rect width="640" height="420" fill="#f0fdfa"/>
+  <rect x="202" y="126" width="236" height="190" rx="28" fill="#14b8a6"/>
+  <rect x="282" y="78" width="76" height="70" rx="18" fill="#0f766e"/>
+  <path d="M320 174v94M273 221h94" stroke="#ecfeff" stroke-width="30" stroke-linecap="round"/>
+  <circle cx="456" cy="126" r="34" fill="#99f6e4"/>
+  <path d="M456 108v36M438 126h36" stroke="#0f766e" stroke-width="10" stroke-linecap="round"/>
+</svg>

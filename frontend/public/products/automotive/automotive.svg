@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Automotive product illustration">
+  <rect width="640" height="420" fill="#f1f5f9"/>
+  <path d="M160 238l44-82h232l44 82v70H160z" fill="#334155"/>
+  <path d="M230 174h180l26 54H204z" fill="#93c5fd"/>
+  <circle cx="228" cy="310" r="42" fill="#0f172a"/>
+  <circle cx="412" cy="310" r="42" fill="#0f172a"/>
+  <circle cx="228" cy="310" r="18" fill="#cbd5e1"/>
+  <circle cx="412" cy="310" r="18" fill="#cbd5e1"/>
+  <rect x="180" y="246" width="54" height="18" rx="9" fill="#facc15"/>
+  <rect x="406" y="246" width="54" height="18" rx="9" fill="#facc15"/>
+</svg>

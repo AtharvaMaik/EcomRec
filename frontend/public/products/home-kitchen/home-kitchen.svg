@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Home and kitchen product illustration">
+  <rect width="640" height="420" fill="#f7fee7"/>
+  <rect x="208" y="112" width="224" height="218" rx="28" fill="#65a30d"/>
+  <rect x="238" y="148" width="164" height="74" rx="18" fill="#ecfccb"/>
+  <circle cx="276" cy="274" r="24" fill="#365314"/>
+  <circle cx="364" cy="274" r="24" fill="#365314"/>
+  <path d="M242 92h156" stroke="#365314" stroke-width="22" stroke-linecap="round"/>
+  <path d="M442 164h42c24 0 44 20 44 44s-20 44-44 44h-42" fill="none" stroke="#65a30d" stroke-width="24"/>
+</svg>

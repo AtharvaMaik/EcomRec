@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Clothing product illustration">
+  <rect width="640" height="420" fill="#fff5f5"/>
+  <path d="M238 78h164l54 50 74 26-42 92-58-16v122H210V230l-58 16-42-92 74-26 54-50z" fill="#ef4444"/>
+  <path d="M270 78c10 36 30 56 50 56s40-20 50-56" fill="none" stroke="#fecaca" stroke-width="18" stroke-linecap="round"/>
+  <rect x="236" y="172" width="168" height="30" rx="15" fill="#991b1b" opacity=".25"/>
+  <rect x="238" y="230" width="164" height="24" rx="12" fill="#991b1b" opacity=".2"/>
+</svg>
