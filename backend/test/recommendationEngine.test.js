@@ -53,3 +53,26 @@ test('recent views provide a light recommendation signal', () => {
   assert.equal(results[0].id, 4);
   assert.match(results[0].reason, /view/i);
 });
+
+test('detailed recommendations expose cart mix intelligence and per-item score breakdowns', () => {
+  const engine = buildRecommendationEngine(PRODUCTS);
+
+  const payload = engine.recommendDetailed({
+    cartProductIds: [1, 3],
+    purchaseProductIds: [5],
+    recentViewProductIds: [4],
+    limit: 3
+  });
+
+  assert.equal(payload.intelligence.uniqueCartItems, 2);
+  assert.equal(payload.intelligence.totalCartSignals, 2);
+  assert.ok(payload.intelligence.diversityScore > 0);
+  assert.ok(payload.intelligence.dominantCategories.length >= 2);
+  assert.ok(payload.intelligence.topSignals.length > 0);
+  assert.match(payload.intelligence.summary, /multi-item/i);
+
+  assert.equal(payload.recommendations[0].id, 2);
+  assert.ok(payload.recommendations[0].breakdown.cart > 0);
+  assert.ok(Array.isArray(payload.recommendations[0].matchedSignals));
+  assert.ok(payload.bundleBuilder.length > 0);
+});

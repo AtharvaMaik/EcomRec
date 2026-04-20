@@ -3,6 +3,8 @@ import { api } from '../services/api';
 
 export function useRecommendations(userId, refreshKey) {
   const [recommendations, setRecommendations] = useState([]);
+  const [intelligence, setIntelligence] = useState(null);
+  const [bundleBuilder, setBundleBuilder] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -12,10 +14,14 @@ export function useRecommendations(userId, refreshKey) {
     try {
       const data = await api.getRecommendations(userId, 8);
       setRecommendations(data.recommendations || []);
+      setIntelligence(data.intelligence || null);
+      setBundleBuilder(data.bundleBuilder || []);
       setError('');
     } catch (err) {
       setError(err.message);
       setRecommendations([]);
+      setIntelligence(null);
+      setBundleBuilder([]);
     } finally {
       setLoading(false);
     }
@@ -25,5 +31,5 @@ export function useRecommendations(userId, refreshKey) {
     refreshRecommendations();
   }, [refreshKey, refreshRecommendations]);
 
-  return { error, loading, recommendations, refreshRecommendations };
+  return { bundleBuilder, error, intelligence, loading, recommendations, refreshRecommendations };
 }

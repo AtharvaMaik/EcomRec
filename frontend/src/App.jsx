@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
+import BundleBuilder from './components/BundleBuilder';
+import CartIntelligence from './components/CartIntelligence';
 import Recommendations from './components/Recommendations';
 import PurchaseHistory from './components/PurchaseHistory';
 import { useCart } from './hooks/useCart';
@@ -15,7 +17,7 @@ function App() {
   const { addItem, cart, checkout, error: cartError, loading: cartLoading, removeItem, updateItem } = useCart(user?.id);
   const { error: historyError, history, refreshHistory } = useUserHistory(user?.id);
   const [refreshKey, setRefreshKey] = useState(0);
-  const { error: recError, loading: recLoading, recommendations, refreshRecommendations } = useRecommendations(user?.id, `${refreshKey}-${cart.items.length}`);
+  const { bundleBuilder, error: recError, intelligence, loading: recLoading, recommendations, refreshRecommendations } = useRecommendations(user?.id, `${refreshKey}-${cart.items.length}`);
   const [checkingOut, setCheckingOut] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(true);
   const cartCount = cart.items.reduce((sum, item) => sum + item.quantity, 0);
@@ -61,10 +63,10 @@ function App() {
         <div>
           <div className="store-kicker">Personal storefront</div>
           <h1>RecommendIt Market</h1>
-          <p>Smart suggestions from your bag, browsing, and purchase history.</p>
+          <p>Multi-item cart recommendations ranked across your bag, browsing, and purchase history.</p>
         </div>
         <button className="bag-toggle" onClick={() => setIsCartOpen(open => !open)} aria-expanded={isCartOpen} aria-controls="shopping-panel">
-          <span className="bag-icon" aria-hidden="true">□</span>
+          <span className="bag-icon" aria-hidden="true"></span>
           <span>Bag</span>
           <strong>{cartCount}</strong>
         </button>
@@ -74,6 +76,10 @@ function App() {
         {(sessionError || cartError || historyError) && (
           <div className="status-message">{sessionError || cartError || historyError}</div>
         )}
+        <div className="storefront-intelligence">
+          <CartIntelligence intelligence={intelligence} />
+          <BundleBuilder bundles={bundleBuilder} />
+        </div>
         <ProductList
           cartItems={cart.items}
           onAddToCart={addToCart}
@@ -87,7 +93,7 @@ function App() {
             <span>Shopping Bag</span>
             <small>{cartCount} item{cartCount === 1 ? '' : 's'}</small>
           </div>
-          <button className="panel-close" onClick={() => setIsCartOpen(false)} title="Collapse cart">×</button>
+          <button className="panel-close" onClick={() => setIsCartOpen(false)} title="Collapse cart">x</button>
         </div>
         {(sessionLoading || cartLoading) && <div className="status-message compact">Loading cart...</div>}
         <Cart

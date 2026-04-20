@@ -25,14 +25,14 @@ function recommendationsRouter(db, getEngine) {
       getRecentProductViews(db, userId, 20)
     ]);
 
-    const recommendations = engine.recommend({
+    const payload = engine.recommendDetailed({
       cartProductIds: cart.items.flatMap(item => Array(item.quantity).fill(item.product_id)),
       purchaseProductIds: purchases.flatMap(item => Array(item.quantity).fill(item.product_id)),
       recentViewProductIds: views.map(item => item.product_id),
       limit: req.body.limit
     });
 
-    res.json({ recommendations });
+    res.json(payload);
   }));
 
   return router;
