@@ -142,6 +142,8 @@ Example response:
 
 These steps run the full project locally: React frontend, Express backend, SQLite database, product seeding, cart persistence, order history, product views, and the real backend recommendation engine.
 
+Live demo: https://ecomrec.vercel.app
+
 ### Prerequisites
 
 - Node.js 20 or newer
