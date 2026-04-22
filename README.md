@@ -1,5 +1,8 @@
 # RecommendIt Market
 
+![Language](https://img.shields.io/badge/Language-JavaScript-blue)
+![License](https://img.shields.io/badge/License-No%20license%20specified-lightgrey)
+
 RecommendIt Market is a full-stack ecommerce recommendation platform built with React, Express, and SQLite. It demonstrates a production-style recommendation workflow where the app learns from the user's current cart, real checkout history, and recent product views to rank the next best products from a 10,000 item catalog.
 
 The project is designed to look and behave like a polished storefront rather than a static demo: products use bundled local category artwork, the cart is persisted through backend APIs, checkout creates real order history, and recommendations are explainable with match scores and reasons.
@@ -252,3 +255,13 @@ npm run build
 ## Project Status
 
 This project is ready for local demo and portfolio use. The current version focuses on anonymous personalization rather than authentication, making it easy to run without external services while still demonstrating real full-stack state and recommendation logic.
+
+## Contributing
+
+Contributions are welcome. You can help by reporting bugs, suggesting features, improving documentation, or opening pull requests.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make a focused change.
+4. Test the project locally when possible.
+5. Open a pull request with a clear summary of what changed.
