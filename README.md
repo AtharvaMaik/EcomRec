@@ -1,7 +1,6 @@
 # RecommendIt Market
 
-![Language](https://img.shields.io/badge/Language-JavaScript-blue)
-![License](https://img.shields.io/badge/License-No%20license%20specified-lightgrey)
+System.Object[]
 
 RecommendIt Market is a full-stack ecommerce recommendation platform built with React, Express, and SQLite. It demonstrates a production-style recommendation workflow where the app learns from the user's current cart, real checkout history, and recent product views to rank the next best products from a 10,000 item catalog.
 
