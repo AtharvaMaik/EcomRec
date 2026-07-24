@@ -230,7 +230,7 @@ VITE_API_BASE=http://localhost:3001/api
 
 ### Deployed Vercel Demo
 
-The Vercel deployment runs the polished React storefront and includes a browser-side demo data adapter so the public portfolio link remains interactive without needing a long-running SQLite server. For the complete full-stack experience with the real Express API and SQLite recommendation engine, use the local setup above.
+The Vercel deployment runs the polished React storefront and includes a browser-side demo data adapter so the public demo remains interactive without needing a long-running SQLite server. For the complete full-stack experience with the real Express API and SQLite recommendation engine, use the local setup above.
 
 ## Testing
 
@@ -248,15 +248,10 @@ cd frontend
 npm run build
 ```
 
-## Resume Bullets
-
-- Built a full-stack ecommerce recommendation platform indexing 10,000 products with a custom TF-IDF and cosine-similarity engine that blends every cart item, purchase, and product view into one ranked shopper-intent profile.
-- Engineered explainable multi-item recommendations with cart-match, history-match, view-match, matched-signal tags, bundle-completion labels, and cart diversity intelligence, making ranking decisions transparent instead of black-box.
-- Shipped a polished React storefront with local bundled product imagery, collapsible cart UX, search/filter/sort controls, SQLite-backed checkout history, and tested backend services covering recommendation, cart, and personalization flows.
 
 ## Project Status
 
-This project is ready for local demo and portfolio use. The current version focuses on anonymous personalization rather than authentication, making it easy to run without external services while still demonstrating real full-stack state and recommendation logic.
+This project supports both local and deployed demos. The current version focuses on anonymous personalization rather than authentication, making it easy to run without external services while retaining the full-stack state and recommendation workflow.
 
 ## Contributing
 
